@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>
-        Hola desde html
-    </h1>
-</body>
-</html>
+{% extends 'base/base.html' %}
+
+{% block nombredemibloque %}
+    <p>Esto es parte del index.html</p>
+    <p>Variable recibida desde extends.py : {{ var1 }}</p>
+
+{% endblock %}

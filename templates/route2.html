@@ -1,0 +1,9 @@
+{% extends 'base/base.html'%}
+
+{% block nombredemibloque %}
+
+    {% for item in list_vars %}
+        <p>variable desde route2.html: {{ item }} </p>
+    {% endfor %}
+
+{% endblock %}
