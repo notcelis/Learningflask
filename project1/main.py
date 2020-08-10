@@ -3,6 +3,7 @@ from flask import render_template
 from flask import request
 from flask import make_response
 from flask import session
+from flask import flash
 
 from flask import url_for
 from flask import redirect
@@ -33,6 +34,9 @@ def logout():
 def login():
     login_form = forms.LoginForm(request.form)
     if request.method == 'POST' and login_form.validate():
+        username = login_form.username.data
+        success_message = 'Bienvenido {}'.format(username)
+        flash(success_message)
         session['username'] = login_form.username.data
     return render_template('login.html', form = login_form)
 
